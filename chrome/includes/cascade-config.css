@@ -34,9 +34,71 @@
   padding: 0px !important;
 }
 
+/* =========================== sidebar =========================== */
+/* remove tst sidebar header */
+#sidebar-header {
+  display: none !important;
+}
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]
+  #sidebar-header {
+  display: none !important;
+}
+
+/*Collapse in default state and add transition*/
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"],
+#sidebar {
+  overflow: hidden;
+  min-width: 10px !important;
+  max-width: 10px !important;
+  transition: all 0.2s ease-out 0s;
+  border-right: none !important;
+  z-index: 2;
+}
+
+/*Expand to 500px on hover*/
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover,
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]
+  #sidebar {
+  min-width: 500px !important;
+  max-width: 500px !important;
+  transition: all 0.2s ease-out 0s;
+  border-right: none !important;
+  z-index: 1;
+}
+
+#sidebar {
+  border-right: none !important;
+}
+
+#sidebar {
+  background-color: var(--window-color) !important;
+}
+
+@media {
+  :root {
+    --dark-sidebar: var(--window-color) !important;
+    --dark-sidebar-text: var(--font-color) !important;
+    --dark-sidebar-border: var(--window-color) !important;
+    --sidebar-border: none !important;
+    --in-content-box-background: var(--window-color) !important;
+  }
+}
+
 /*---+---+---+---+---+---+---+
  | T | O | O | L | B | A | R |
  +---+---+---+---+---+---+---*/
+#TabsToolbar,
+#window,
+#toolbar-menubar,
+#PersonalToolbar,
+#navigator-toolbox {
+  -moz-appearance: none;
+
+  border: none !important;
+  box-shadow: none !important;
+  background: var(--uc-theme-color) !important;
+}
 
 /*  Position of the Personal Toolbar
  *  possible values:
@@ -71,8 +133,8 @@
    *  If enabled the max-width is applied on focus
    *  otherwise the URL Bar will always be it's min-width
    */
-  --uc-urlbar-min-width: 35vw;
-  --uc-urlbar-max-width: 35vw;
+  --uc-urlbar-min-width: 100vw;
+  --uc-urlbar-max-width: 100vw;
 
   /*  Position of the URL Bar
    *  possible values:
