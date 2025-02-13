@@ -89,16 +89,21 @@
  | T | O | O | L | B | A | R |
  +---+---+---+---+---+---+---*/
 #TabsToolbar,
-#window,
-#toolbar-menubar,
-#PersonalToolbar,
-#navigator-toolbox {
-  -moz-appearance: none;
+#window {
+  display: none !important;
 
   border: none !important;
   box-shadow: none !important;
   background: var(--uc-theme-color) !important;
 }
+
+#toolbar-menubar {
+  display: none !important;
+}
+
+/* #toolbar-menubar,
+#PersonalToolbar,
+#navigator-toolbox */
 
 /*  Position of the Personal Toolbar
  *  possible values:
